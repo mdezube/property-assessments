@@ -1,17 +1,24 @@
-# Property Value Analytics in Massachusetts: A Data Driven Demo
+# Property Value Analytics in Massachusetts: A Data Driven Exploration
 
-This repo will be built up over time as the demo is built out to be shared at Mass General Hospital, https://odsc.com/boston/ and to any other interested users.
+This repo will be built up over time as an exploration demo is built out to be shared at Mass General Hospital, https://odsc.com/boston/ and to any other interested users.
 
-# Demo structure (work in progress)
+**Data Source:** [Massachusetts Government Tax Assessments](https://www.mass.gov/info-details/massgis-data-property-tax-parcels)
+ * This site however only provides the assessment data embedded within GIS files (.shp and .gdb) as such I'm making available a [.csv extract of parcel data](https://drive.google.com/file/d/1h8sZ3U2nmurJ5BxfngAdhQfb0U13ladB/view?usp=drive_link) (as of 2023) via Drive created via `ogr2ogr`.
+ * The full file inclusive of parcel boundaries can be downloaded directly from mass.gov at https://www.mass.gov/forms/massgis-request-statewide-parcel-data
+   * The code will include an example of using this file and visualizing parcel level data.
+
+# Assessment Exploration (WIP)
 
 **Title:** Unlocking Insights in Home Values: A Multimillion-Row Journey with Polars
 
-**Data Source:** [Massachusetts Government](https://www.mass.gov/info-details/massgis-data-property-tax-parcels)
+**Related Files**
+
+1. [Property Type Classification Codes](https://www.mass.gov/files/documents/2016/08/wr/classificationcodebook.pdf) also included in this repo.  Necessary to understand `use codes` in the data e.g. residential, multifamily, agriculture, apartments, etc.
+2. [MassGIS standard for digital parcels and related data sets](https://www.mass.gov/info-details/massgis-standard-for-digital-parcels-and-related-data-sets) also included in this repo.  Helpful to understand all of the columns and fields.
 
 **Abstract:**
 
-Join us for a hands-on data adventure exploring hidden insights and nuances across all home and building values in Massachusetts. With a dataset containing 2.5 million rows, this workshop will showcase the incredible capabilities of 
-Polars, a data manipulation library which partners well with Pandas, in handling extensive data with a clean API, high performance and a low memory footprint, all on your local machine.
+Hands-on data adventure exploring hidden insights and nuances across all home and building values in Massachusetts. With a dataset containing 2.5 million rows, this workshop will showcase the incredible capabilities of  Polars, a data manipulation library which partners well with Pandas, in handling extensive data with a clean API, high performance and a low memory footprint, all on your local machine.
 
 Throughout the session, we'll demonstrate how Polars empowers users to perform nuanced analyses, such as pinpointing the most expensive homes in every town and on every street in Massachusetts, or unraveling the factors influencing home prices such as style, location, acreage, year built, square footage, etc.
 
