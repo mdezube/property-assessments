@@ -1,13 +1,16 @@
 # Property Value Analytics in Massachusetts: A Data Driven Exploration
 
-This repo will be built up over time as an exploration demo is built out to be shared at Mass General Hospital, https://odsc.com/boston/ and to any other interested users.
+This repo will be built up over time as an exploration demo is built out to be shared at Mass General Brigham, https://odsc.com/boston/ and to any other interested users.
 
 **Data Source:** [Massachusetts Government Tax Assessments](https://www.mass.gov/info-details/massgis-data-property-tax-parcels)
- * This site however only provides the assessment data embedded within GIS files (.shp and .gdb) as such I'm making available a [.csv extract of parcel data](https://drive.google.com/file/d/1h8sZ3U2nmurJ5BxfngAdhQfb0U13ladB/view?usp=drive_link) (as of 2023) via Drive created via `ogr2ogr`.
+ * This site however only provides the assessment data embedded within GIS files (.shp and .gdb) as such I'm making available a [.csv extract of parcel data](https://drive.google.com/file/d/1h8sZ3U2nmurJ5BxfngAdhQfb0U13ladB/view?usp=drive_link) (as of 2023) via Google Drive created via `ogr2ogr`.
  * The full file inclusive of parcel boundaries can be downloaded directly from mass.gov at https://www.mass.gov/forms/massgis-request-statewide-parcel-data
-   * The code will include an example of using this file and visualizing parcel level data.
+   * It is recommended to download the `.shp` as the `.gdb` file has some invalid geometries that cause issues in python loading.  The `.shp` file is sharded by East/West but just download both and we'll focus on East for now.
+   * The code does include an example of using this file and visualizing parcel level data.
 
-# Assessment Exploration (WIP)
+# Assessment Exploration
+
+A v1 of this is complete and in the adjacent notebook, but it will continue to grow.
 
 **Title:** Unlocking Insights in Home Values: A Multimillion-Row Journey with Polars
 
