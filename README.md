@@ -26,3 +26,7 @@ Hands-on data adventure exploring hidden insights and nuances across all home an
 Throughout the session, we'll demonstrate how Polars empowers users to perform nuanced analyses, such as pinpointing the most expensive homes in every town and on every street in Massachusetts, or unraveling the factors influencing home prices such as style, location, acreage, year built, square footage, etc.
 
 Whether you're a data enthusiast, analyst, or someone intrigued by the power of data analysis, this interactive workshop will leave you equipped to harness Polars' full potential for your own data exploration endeavors.  Plus you’ll have a fun dataset of all home and building values (per tax assessment) at your fingertips. Time permitting, we’ll also do some GIS analysis on the dataset.  Don't miss this opportunity to discover the stories hidden within the numbers and elevate your data analysis skills to new heights.  Come prepared to write code in a jupyter notebook/jupyter lab, and leave with a working model and the full dataset.
+
+# Screenshots
+
+In lieu of running the code, you can see some select visuals of what it generates in [screenshots](screenshots/).
