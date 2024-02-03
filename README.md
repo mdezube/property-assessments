@@ -1,23 +1,38 @@
-# TODO(mdezube):
-  * Clean up GIS files needed to run this, reduce to just one
-  * Write a proper requirements.txt
-    * As a stopgap, an approximate install looks like:
+# Overview
+
+Following the sections below, you'll be able to install all dependencies and download all requisite files needed to follow along with the workshop described in the [Property Assessment Exploration](#property-value-analytics-in-massachusetts-a-data-driven-exploration-1) section.
+
+# Installation
+
+## Environment and dependencies
+
+Using the commands below, you can set up a new conda environment named `geo_expolorer` install the dependencies, and get it registered for use in jupyter-lab.
+
 ```
-conda create -n geo-explorer python=3.11
-conda activate geo-explorer
+conda create -n geo_explorer python=3.11
+conda activate geo_explorer
 conda install geopandas jupyter pyogrio itables pyarrow seaborn plotly polars --channel conda-forge
+python -m ipykernel install --user --name=geo_explorer
 ```
+
+Pro-tip, want conda installations to run at 10x? (not required for this workshop)
+```
+# Install a much better solver for Conda’s base to keep it running faster
+conda update -n base conda
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
+```
+
+## Data sources
+
+All data comes from the [Massachusetts Government Tax Assessments](https://www.mass.gov/info-details/massgis-data-property-tax-parcels)
+ * This site however only provides the assessment data embedded within GIS files (`.shp` and `.gdb`) as such I'm making available a [.csv extract of parcel data](https://drive.google.com/file/d/1h8sZ3U2nmurJ5BxfngAdhQfb0U13ladB/view?usp=drive_link) (as of 2023) via Google Drive created via `ogr2ogr`.  This file format is easy to work with, and most of the notebook leverages it
+ * Later parts of the notebook get into GIS analysis and thus need property and town boundary definitions along with the assessments
+   * The full file of parcel boundaries can be downloaded directly from mass.gov at https://www.mass.gov/forms/massgis-request-statewide-parcel-data
+   * The notebook as written requires the `.shp` file and the `.gdb` files.  In theory only one is needed, but due to a corrpution in the `L3_TAXPAR_POLY` layer in `.gdb` directly from the gov't we can't use it.
+     * TODO(mdezube): Fix the corruption.
+
 # Property Value Analytics in Massachusetts: A Data Driven Exploration
-
-This repo will be built up over time as an exploration demo is built out to be shared at Mass General Brigham, https://odsc.com/boston/ and to any other interested users.
-
-**Data Source:** [Massachusetts Government Tax Assessments](https://www.mass.gov/info-details/massgis-data-property-tax-parcels)
- * This site however only provides the assessment data embedded within GIS files (.shp and .gdb) as such I'm making available a [.csv extract of parcel data](https://drive.google.com/file/d/1h8sZ3U2nmurJ5BxfngAdhQfb0U13ladB/view?usp=drive_link) (as of 2023) via Google Drive created via `ogr2ogr`.
- * The full file inclusive of parcel boundaries can be downloaded directly from mass.gov at https://www.mass.gov/forms/massgis-request-statewide-parcel-data
-   * The notebook as written requires the `.shp` file and the `.gdb`, this needs to be cleaned up.
-   * The code does include an example of using this file and visualizing parcel level data.
-
-# Assessment Exploration
 
 A v1 of this is complete and in the adjacent notebook, but it will continue to grow.
 
