@@ -12,6 +12,7 @@ Using the commands below, you can set up a new conda environment named `geo_expo
 conda create -n geo_explorer python=3.11
 conda activate geo_explorer
 conda install geopandas jupyter pyogrio itables pyarrow seaborn plotly polars --channel conda-forge
+pip install jupyter-black
 python -m ipykernel install --user --name=geo_explorer
 ```
 
