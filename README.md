@@ -1,6 +1,5 @@
----
-author: Mike Dezube <mdezube@charlesriverdata.com>
----
+**Author**: [Mike Dezube](https://www.linkedin.com/in/mikedezube/) on behalf of [Charles River Data](https://www.charlesriverdata.com/)
+**Contact**: inquiries@charlesriverdata.com
 
 # Overview
 
