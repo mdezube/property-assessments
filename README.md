@@ -30,7 +30,16 @@ In lieu of running the code, you can check out our [article on MA home prices](h
 
 ## Environment and dependencies
 
-Using the commands below, you can set up a new conda environment named `geo_expolorer` install the dependencies, and get it registered for use in jupyter-lab.
+Using the commands below, you can set up a new conda environment named `geo_explorer` install the dependencies, and get it registered for use in jupyter-lab.
+
+Conda can sometimes be slow to resolve dependencies, so at Charles River Data we like to use the [libmamba solver](https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community) for ~10X speed boost.
+```
+# Not required (but recommended) for today's demo, install a much better solver
+# for Conda’s base to keep insallations running quickly:
+conda update -n base conda
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
+```
 
 ```
 conda create -n geo_explorer python=3.11
@@ -40,22 +49,17 @@ pip install jupyter-black
 python -m ipykernel install --user --name=geo_explorer
 ```
 
-Pro-tip, want conda installations to run at 10x? (not required for this workshop)
-```
-# Install a much better solver for Conda’s base to keep it running faster
-conda update -n base conda
-conda install -n base conda-libmamba-solver
-conda config --set solver libmamba
-```
-
 ## Data sources
 
 All data comes from the [Massachusetts Government Tax Assessments](https://www.mass.gov/info-details/massgis-data-property-tax-parcels)
  * This site however only provides the assessment data embedded within GIS files (`.shp` and `.gdb`) as such I'm making available a [.csv extract of parcel data](https://drive.google.com/file/d/1h8sZ3U2nmurJ5BxfngAdhQfb0U13ladB/view?usp=drive_link) (as of 2023) via Google Drive created via `ogr2ogr`.  This file format is easy to work with, and most of the notebook leverages it.
  * Later parts of the notebook get into GIS analysis and thus need property and town boundary definitions along with the assessments
-   * The full file of parcel boundaries can be downloaded directly from mass.gov at https://www.mass.gov/forms/massgis-request-statewide-parcel-data
+   * The full file of parcel boundaries can be downloaded directly from mass.gov at https://www.mass.gov/forms/massgis-request-statewide-parcel-data it's best to download it here so the gov't knows it gets heavy usage and supports it, but if you run into any issues I'm providing direct links as well:
+     * [Parcels as .gdb](https://drive.google.com/file/d/1_NTjM6hAY7k68-jd8qVsP9sSkvZii4wc/view?usp=drive_link), used in this notebook for town boundaries.  Property boundaries are corrupted in this distribution.
+     * [Eastern parcels as .shp](https://drive.google.com/file/d/1KaGz7oj_26Twn9Cf80SCciUcoHGUqCZ6/view?usp=drive_link) Property boundaries of Eastern MA, used in the notebook.
+     * [Western parcels as .shp](https://drive.google.com/file/d/17QIKohh91XW43-Y0msS2V-yjmO-z1VyG/view?usp=drive_link) Property boundaries of Western MA, not used in the notebook, but good to have.
    * The notebook as written requires the `.shp` file and the `.gdb` files.  In theory only one is needed, but due to a corrpution in the `L3_TAXPAR_POLY` layer in `.gdb` directly from the gov't we can't use it.
-     * You'll notice the `.shp` file is split into Western and Eastern MA, you can download both, we'll just use Eastern for now though.
+     * On the gov't website above you'll notice the `.shp` file is split into Western and Eastern MA, you can download both, we'll just use Eastern for now though.
 
 
 #### Related Files
