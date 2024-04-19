@@ -19,7 +19,7 @@ Following the sections below, you'll be able to install all dependencies and dow
 
 # Setting up Your Environment
 
-  1. Follow the [Installation](#installation) steps below to get your environment set up.
+  1. Follow the [Installation](#environment-and-dependencies) steps below to get your environment set up.
   2. Download the data following the instructions in [Data Sources](#data-sources)
   3. Update variables in the notebook to point to your new files (you'll see instructions in the 2nd cell of the notebook)
   4. The notebook `polars-gis-demo.ipynb` should now run in full, give it a shot!
@@ -29,21 +29,16 @@ Following the sections below, you'll be able to install all dependencies and dow
 Using the commands below, you can set up a new conda environment to hold your python dependencies named `geo_explorer`, and get it registered for use in jupyter-lab.  Don't have conda yet?  Download it [here](https://www.anaconda.com/download).  Once installed, pop open terminal (or the equivalent on Windows, there are a number of options) and follow along below.
 
 Conda can sometimes be slow to resolve dependencies, so at Charles River Data we like to use the [libmamba solver](https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community) for ~10X speed boost.
-```
-# Not required (but recommended) for today's demo, install a much better solver
-# for Conda’s base to keep insallations running quickly:
-conda update -n base conda
-conda install -n base conda-libmamba-solver
-conda config --set solver libmamba
-```
 
+You can install this in your base environment so it works for all environments (link above explains how), but for today, we'll just install it in our new one:
 ```
 # Create a new conda environment and activate it.
 conda create -n geo_explorer python=3.11
 conda activate geo_explorer
+conda install conda-libmamba-solver
 
 # Install the dependencies you'll need to work with this data.
-conda install geopandas jupyter pyogrio itables pyarrow seaborn plotly polars --channel conda-forge
+conda install geopandas jupyter pyogrio itables pyarrow seaborn plotly polars --channel conda-forge --solver=libmamba
 pip install jupyter-black
 
 # Register the new conda environment with jupyter.
