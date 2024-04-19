@@ -17,7 +17,7 @@ Following the sections below, you'll be able to install all dependencies and dow
 
 <hr/>
 
-# Setting Up Your Environment
+# Setting up Your Environment
 
   1. Follow the [Installation](#installation) steps below to get your environment set up.
   2. Download the data following the instructions in [Data Sources](#data-sources)
@@ -57,8 +57,8 @@ All data comes from the [Massachusetts Government Tax Assessments](https://www.m
  * **Diving deeper with GIS**: Later parts of the notebook get into GIS analysis and thus need property and town boundary definitions along with the assessments
    * The full file of parcel boundaries can be downloaded directly from [mass.gov's GIS site](https://www.mass.gov/forms/massgis-request-statewide-parcel-data) And it's best to download it here so the gov't knows it gets heavy usage and supports it, but if you run into any issues I'm providing direct links as well:
      * [Parcels as .gdb](https://drive.google.com/file/d/1_NTjM6hAY7k68-jd8qVsP9sSkvZii4wc/view?usp=drive_link), used in this notebook for town boundaries.  Property boundaries are corrupted in this distribution.
-     * [Eastern parcels as .shp](https://drive.google.com/file/d/1KaGz7oj_26Twn9Cf80SCciUcoHGUqCZ6/view?usp=drive_link) Property boundaries of Eastern MA, used in the notebook.
-     * [Western parcels as .shp](https://drive.google.com/file/d/17QIKohh91XW43-Y0msS2V-yjmO-z1VyG/view?usp=drive_link) Property boundaries of Western MA, not used in the notebook, but good to have.
+     * [Eastern parcels as .shp](https://drive.google.com/file/d/1kRMw_o71WIMdbPG4yd7DUtniHralR_ub/view?usp=drive_link) Property boundaries of Eastern MA, used in the notebook.
+     * [Western parcels as .shp](https://drive.google.com/file/d/1eVMU_rseKeqY-Bv-4V6NeKbiKgM0M09-/view?usp=drive_link) Property boundaries of Western MA, not used in the notebook, but good to have.
   
   **Technical note**
   The notebook as written requires the `.shp` file and the `.gdb` files.  In theory only one is needed, but due to a corrpution in the `L3_TAXPAR_POLY` layer in `.gdb` directly from the gov't we can't use it.
